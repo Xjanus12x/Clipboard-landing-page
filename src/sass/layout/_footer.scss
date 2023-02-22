@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as v;
+
+footer {
+  background-color: hsl(201, 11%, 66%, 0.2);
+  font-family: v.$boiJomjuree;
+  ul {
+    display: grid;
+    place-items: center;
+    gap: 1.5rem;
+    padding-block: 3rem;
+    li:first-child img {
+      width: 3rem;
+    }
+    li:is(:nth-child(2), :nth-child(3), :nth-child(4)) {
+      display: grid;
+      place-items: center;
+      gap: 1.5rem;
+    }
+    li:last-child {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: v.$bp-desktop) {
+  footer {
+    
+    ul {
+      grid-template-columns: repeat(6, 1fr);
+
+      li:is(:nth-child(2), :nth-child(3), :nth-child(4)) {
+        place-items: unset;
+      }
+
+      li:last-child {
+        grid-column: 6 / -1;
+      }
+    }
+  }
+}

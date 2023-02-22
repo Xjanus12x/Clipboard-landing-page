@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as v;
+.button {
+  font-family: inherit;
+  color: white;
+  border: 0;
+  padding: 0.8rem 5rem;
+  border-radius: 50vw;
+}
+.button:is([data-color="cyan"], [data-color="blue"]):hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.button[data-color="cyan"] {
+  background-color: map-get(v.$primaryColors, "strong-cyan");
+  -webkit-box-shadow: 0px 40px 77px -21px rgba(38, 186, 164, 1);
+  -moz-box-shadow: 0px 40px 77px -21px rgba(38, 186, 164, 1);
+  box-shadow: 0px 40px 77px -21px rgba(38, 186, 164, 1);
+}
+
+.button[data-color="blue"] {
+  background-color: map-get(v.$primaryColors, "light-blue");
+  -webkit-box-shadow: 0px 40px 77px -21px rgba(97, 115, 255, 1);
+  -moz-box-shadow: 0px 40px 77px -21px rgba(97, 115, 255, 1);
+  box-shadow: 0px 40px 77px -21px rgba(97, 115, 255, 1);
+}

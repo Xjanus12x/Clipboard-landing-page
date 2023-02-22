@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as v;
+@use "../components/buttons";
+
+h1,
+h2,
+h3 {
+  color: map-get(v.$neutralColors, "dark-grayish-blue");
+}
+
+p {
+  color: map-get(v.$neutralColors, "grayish-blue");
+}
+
+header {
+  font-family: v.$boiJomjuree;
+  font-size: v.$fontSize;
+  text-align: center;
+
+  .history {
+    display: grid;
+    place-items: center;
+    background-image: url(../../assets/bg-header-mobile.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-inline: 2rem;
+    &__img {
+      height: auto;
+      max-width: 7rem;
+      margin-bottom: 3rem;
+    }
+    &__title {
+      max-width: 15ch;
+      margin-bottom: 1rem;
+    }
+    &__description {
+      margin-bottom: 2.5rem;
+    }
+    &__buttons {
+      margin-bottom: 5rem;
+      & .button[data-color="cyan"] {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  .track {
+    display: grid;
+    place-items: center;
+    padding-inline: 2rem;
+    &__title {
+      max-width: 15ch;
+      margin-bottom: 1rem;
+    }
+    &__description {
+      max-width: 30ch;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@media screen and (min-width: v.$bp-desktop) {
+  h1,
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  header {
+    .history {
+      background-image: url(../../assets/bg-header-desktop.png);
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: cover;
+
+      &__img {
+        height: auto;
+        max-width: 7rem;
+        margin-bottom: 3rem;
+      }
+      &__title {
+        margin-bottom: 1rem;
+        max-width: unset;
+      }
+      &__description {
+        margin-bottom: 2.5rem;
+        max-width: 55ch;
+      }
+    }
+    .buttons {
+      margin-bottom: 10rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      & .button[data-color="cyan"] {
+        margin-bottom: unset;
+      }
+    }
+    .track {
+      &__title {
+        max-width: unset;
+        margin-bottom: 1rem;
+      }
+      &__description {
+        max-width: 60ch;
+        margin-bottom: 5rem;
+      }
+    }
+  }
+}
